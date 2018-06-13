@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.areuman.bbs.dao.UserDAO">
+  <select id="selectOneUser" resultType="com.areuman.bbs.model.User">
+    select * from user where userID = #{userID}
+  </select>
+  
+  <insert id="insertUser">
+  insert into user(userID, firstName, lastName, userEmail, userPW)
+values(#{userID},#{firstName},#{lastName},#{userEmail},#{userPW});
+  </insert>
+</mapper>
