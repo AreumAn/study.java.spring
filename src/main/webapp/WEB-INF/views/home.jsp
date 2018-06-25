@@ -14,102 +14,55 @@
 		<div class="row">
 			<div class="col-lg-8 col-md-8">
 				<c:forEach items="${topiclist}" var="topic">
-				<!-- POST -->
-				<div class="post">
-					<div class="wrap-ut pull-left">
-						<div class="userinfo pull-left">
-							<div class="avatar">
-								<img src="images/avatar.jpg" alt="" />
+					<!-- POST -->
+					<div class="post">
+						<div class="wrap-ut pull-left">
+							<div class="userinfo pull-left">
+								<div class="avatar">
+									<img src="images/avatar.jpg" alt="" />
+								</div>
+								<div class="icons"></div>
 							</div>
-							<div class="icons"></div>
+							<div class="posttext pull-left">
+								<!-- 제목 -->
+								<h2>
+									<a href="details.html">${topic.title}</a>
+								</h2>
+								<!-- 내용 앞에 100자 -->
+								<p>${topic.description}</p>
+							</div>
+							<div class="clearfix"></div>
 						</div>
-						<div class="posttext pull-left">
-							<!-- 제목 -->
-							<h2>
-								<a href="details.html">${topic.title}</a>
-							</h2>
-							<!-- 내용 앞에 100자 -->
-							<p>${topic.description}</p>
+						<div class="postinfo pull-left">
+							<!-- 코멘트 수 -->
+							<div class="comments">
+								<div class="commentbg">
+									10
+									<div class="mark"></div>
+								</div>
+							</div>
+							<!-- 조회수 -->
+							<div class="views">
+								<i class="fa fa-eye"></i> ${topic.hit}
+							</div>
+							<!-- 업로드날짜 -->
+							<div class="time">
+								<i class="fa fa-clock-o"></i> ${topic.modifyDate}
+							</div>
 						</div>
 						<div class="clearfix"></div>
 					</div>
-					<div class="postinfo pull-left">
-						<!-- 코멘트 수 -->
-						<div class="comments">
-							<div class="commentbg">
-								10
-								<div class="mark"></div>
-							</div>
-						</div>
-						<!-- 조회수 -->
-						<div class="views">
-							<i class="fa fa-eye"></i> ${topic.hit}
-						</div>
-						<!-- 업로드날짜 -->
-						<div class="time">
-							<i class="fa fa-clock-o"></i> ${topic.modifyDate}
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<!-- POST -->
+					<!-- POST -->
 				</c:forEach>
-				
-				
 
 
 
-			</div>
-
-
-			<div class="col-lg-4 col-md-4">
-				<!-- -->
-				<div class="sidebarblock">
-					<h3>Categories</h3>
-					<div class="divline"></div>
-					<div class="blocktxt">
-						<ul class="cats">
-						<c:forEach items="${categorylist}" var="category">
-							<li><a href="#">${category.cName} <span
-									class="badge pull-right">20</span>
-							</a></li>
-							<li><a href="#">${category.cName} <span
-									class="badge pull-right">10</span>
-							</a></li>
-							</c:forEach>
-						</ul>
-					</div>
-				</div>
-
-				<!-- -->
-				<div class="sidebarblock">
-					<h3>My Active Threads</h3>
-					<div class="divline"></div>
-					<div class="blocktxt">
-						<a href="#">This Dock Turns Your iPhone Into a Bedside Lamp</a>
-					</div>
-					<div class="divline"></div>
-					<div class="blocktxt">
-						<a href="#">Who Wins in the Battle for Power on the Internet?</a>
-					</div>
-					<div class="divline"></div>
-					<div class="blocktxt">
-						<a href="#">Sony QX10: A Funky, Overpriced Lens Camera for
-							Your Smartphone</a>
-					</div>
-					<div class="divline"></div>
-					<div class="blocktxt">
-						<a href="#">FedEx Simplifies Shipping for Small Businesses</a>
-					</div>
-					<div class="divline"></div>
-					<div class="blocktxt">
-						<a href="#">Loud and Brave: Saudi Women Set to Protest Driving
-							Ban</a>
-					</div>
-				</div>
 
 
 			</div>
+
+			<%@ include file="./include/sidebar.jsp"%>
+
 		</div>
 	</div>
 

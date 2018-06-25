@@ -57,7 +57,7 @@
 					</div>
 					<div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
 						<div class="stnt pull-left">
-							<form action="new_topic.html" method="post" class="form">
+							<form action="/topic/write" class="form">
 								<button class="btn btn-primary">Start New Topic</button>
 							</form>
 						</div>
@@ -71,12 +71,19 @@
 							</a> <b class="caret"></b>
 							<div class="status green">&nbsp;</div>
 							<ul class="dropdown-menu" role="menu">
-								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="login.html">Log In</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-3"
-									href="#">Log Out</a></li>
-								<li role="presentation"><a role="menuitem" tabindex="-4"
-									href="account.html">Create account</a></li>
+								<c:choose>
+									<c:when test="${login}">
+										<li role="presentation"><a role="menuitem" tabindex="-3"
+											href="/user/logout">Log Out</a></li>
+									</c:when>
+									<c:otherwise>
+										<li role="presentation"><a role="menuitem" tabindex="-1"
+											href="/user/login">Log In</a></li>
+
+										<li role="presentation"><a role="menuitem" tabindex="-4"
+											href="/user/create">Create account</a></li>
+									</c:otherwise>
+								</c:choose>
 							</ul>
 						</div>
 

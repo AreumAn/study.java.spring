@@ -1,6 +1,7 @@
 package com.areuman.bbs.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,8 @@ import com.areuman.bbs.model.User;
 import com.areuman.bbs.service.CategoryService;
 import com.areuman.bbs.service.TopicService;
 import com.areuman.bbs.service.UserService;
+
+import utils.CommonConstants;
 
 /**
  * Handles requests for the application home page.
@@ -29,25 +32,33 @@ public class HomeController {
 	TopicService topicService;
 	
 	@RequestMapping("/")
-	public String home(Model model) {
+	public String home(Model model, HttpSession session) {
 //		User user = userService.selectOneUser("abc");
 //		model.addAttribute("user", user);
-		logger.info("******************************");
-		logger.info(categoryService.selectCategories().toString());
-		logger.info(topicService.selectTopics().toString());
-		model.addAttribute("categorylist", categoryService.selectCategories());
-		model.addAttribute("topiclist", topicService.selectTopics());
+		session.removeAttribute(CommonConstants.userError);
 		
-		return "home";
+		User loginUser = (User)session.getAttribute("user");
+		if (loginUser != null) {
+			logger.info("******************************");
+			logger.info(categoryService.selectCategories().toString());
+			logger.info(topicService.selectTopics().toString());
+			model.addAttribute("login", true);
+			model.addAttribute("categorylist", categoryService.selectCategories());
+			model.addAttribute("topiclist", topicService.selectTopics());
+			return "home";
+		}
+		
+		model.addAttribute("login", false);
+		return "redirect:/user/login";
 	}
 	
 	@RequestMapping(value = "/aboutme", method = RequestMethod.GET)
-	public String aboutme(String name, int age, Model model) {
+	public void aboutme(String name, int age, Model model) {
 		// http://localhost:8080/aboutme?name=areum&age=22
 		model.addAttribute("name", name );
 		model.addAttribute("age", age );
 		
-		return "aboutme";
+//		return "aboutme";
 	}
 	
 }
