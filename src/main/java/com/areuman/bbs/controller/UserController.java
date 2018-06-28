@@ -27,6 +27,11 @@ public class UserController {
 		return "redirect:/user/login";
 	}
 	
+	@GetMapping("/create")
+	public String create() {
+		return "create";
+	}
+	
 	@GetMapping("/login")
 	public String login(Model model, HttpSession session) {
 		boolean isError = false;

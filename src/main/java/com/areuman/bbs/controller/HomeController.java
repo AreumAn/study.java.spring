@@ -52,6 +52,27 @@ public class HomeController {
 		return "redirect:/user/login";
 	}
 	
+	@RequestMapping("/asc")
+	public String homeAsc(Model model) {
+		model.addAttribute("categorylist", categoryService.selectCategories());
+		model.addAttribute("topiclist", topicService.selectTopicsByAsc());
+		return "home";
+	}
+	
+	@RequestMapping("/desc")
+	public String homeDesc(Model model) {
+		model.addAttribute("categorylist", categoryService.selectCategories());
+		model.addAttribute("topiclist", topicService.selectTopicsByDesc());
+		return "home";
+	}
+	
+	@RequestMapping("/date")
+	public String homeDate(Model model) {
+		model.addAttribute("categorylist", categoryService.selectCategories());
+		model.addAttribute("topiclist", topicService.selectTopicsByDate());
+		return "home";
+	}
+	
 	@RequestMapping(value = "/aboutme", method = RequestMethod.GET)
 	public void aboutme(String name, int age, Model model) {
 		// http://localhost:8080/aboutme?name=areum&age=22

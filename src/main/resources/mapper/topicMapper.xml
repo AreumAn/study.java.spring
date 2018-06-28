@@ -7,4 +7,16 @@
     select * from topic
   </select>
   
+  <select id="selectTopicsByAsc" resultType="com.areuman.bbs.model.Topic">
+  	SELECT * FROM topic order by title ASC
+  </select>
+  
+  <select id="selectTopicsByDesc" resultType="com.areuman.bbs.model.Topic">
+  	SELECT * FROM topic order by title DESC
+  </select>
+  
+  <select id="selectTopicsByDate" resultType="com.areuman.bbs.model.Topic">
+  	SELECT * FROM topic order by modifyDate DESC
+  </select>
+  
 </mapper>

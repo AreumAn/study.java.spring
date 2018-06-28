@@ -29,7 +29,7 @@ public class TopicController {
 	
 	@GetMapping("/write")
 	public ModelAndView write(ModelAndView mav) {
-		mav.setViewName("write");;
+		mav.setViewName("write");
 		mav.addObject("categorylist", categoryService.selectCategories());
 		return mav;
 	}

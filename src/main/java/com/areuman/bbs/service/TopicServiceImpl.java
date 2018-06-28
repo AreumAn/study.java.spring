@@ -19,5 +19,20 @@ public class TopicServiceImpl implements TopicService {
 		// TODO Auto-generated method stub
 		return topicDAO.selectTopics();
 	}
+	@Override
+	public List<Topic> selectTopicsByAsc() {
+		// TODO Auto-generated method stub
+		return topicDAO.selectTopicsByAsc();
+	}
+	@Override
+	public List<Topic> selectTopicsByDesc() {
+		// TODO Auto-generated method stub
+		return topicDAO.selectTopicsByDesc();
+	}
+	@Override
+	public List<Topic> selectTopicsByDate() {
+		// TODO Auto-generated method stub
+		return topicDAO.selectTopicsByDate();
+	}
 
 }

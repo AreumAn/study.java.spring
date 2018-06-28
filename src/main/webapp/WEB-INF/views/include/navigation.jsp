@@ -46,20 +46,24 @@
 							<a data-toggle="dropdown" href="#">SORT BY</a> <b class="caret"></b>
 							<ul class="dropdown-menu" role="menu">
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Title(A-Z)</a></li>
+									href="/asc">Title(A-Z)</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-2"
-									href="#">Title(Z-A)</a></li>
+									href="/desc">Title(Z-A)</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-3"
-									href="#">Latest date</a></li>
+									href="/date">Latest date</a></li>
 
 							</ul>
 						</div>
 					</div>
 					<div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
 						<div class="stnt pull-left">
+						<c:choose>
+						<c:when test="${login}">
 							<form action="/topic/write" class="form">
 								<button class="btn btn-primary">Start New Topic</button>
 							</form>
+						</c:when>
+						</c:choose>
 						</div>
 						<div class="env pull-left">
 							<i class="fa fa-envelope"></i>
