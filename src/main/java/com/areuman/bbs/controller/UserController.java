@@ -32,6 +32,13 @@ public class UserController {
 		return "create";
 	}
 	
+	@PostMapping("/create")
+	public String createAccout(User user) {
+		//userService.insertUser(user.getUserID(), user.getFirstName(), user.getLastName(), user.getUserEmail(), user.getUserPW());
+		userService.insertUser(user);
+		return "login";
+	}
+	
 	@GetMapping("/login")
 	public String login(Model model, HttpSession session) {
 		boolean isError = false;
