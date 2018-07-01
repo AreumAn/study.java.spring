@@ -19,4 +19,10 @@
   	SELECT * FROM topic order by modifyDate DESC
   </select>
   
+  <insert id="insertTopic">
+  	insert into topic (category, title, description, writer)
+	values (#{category},#{title},#{description},#{writer});
+  </insert>
+
+  
 </mapper>

@@ -34,5 +34,10 @@ public class TopicDAOImpl implements TopicDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("selectTopicsByDate");
 	}
+	@Override
+	public void insertTopic(Topic topic) {
+		// TODO Auto-generated method stub
+		sqlSession.insert("insertTopic", topic);
+	}
 
 }

@@ -35,7 +35,7 @@
                                     <div class="posttext pull-left">
 
                                         <div>
-                                            <input type="text" placeholder="Enter Topic Title" class="form-control" />
+                                            <input type="text" placeholder="Enter Topic Title" name="title" class="form-control" />
                                         </div>
 
                                         <div class="row">
@@ -50,7 +50,7 @@
                                         </div>
 
                                         <div>
-                                            <textarea name="desc" id="desc" placeholder="Description" class="form-control"></textarea>
+                                            <textarea id="desc" placeholder="Description" name="description" class="form-control"></textarea>
                                         </div>
 
 

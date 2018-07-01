@@ -58,6 +58,7 @@ public class UserController {
 		User loginUser = userService.selectOneUser(user.getUserID());
 		if(loginUser != null && user.getUserPW().equals(loginUser.getUserPW())) {
 			session.setAttribute(CommonConstants.sessionUser, user);
+			session.setAttribute(CommonConstants.sessionUserID, loginUser.getUserID());
 			return "redirect:/";
 		}
 		

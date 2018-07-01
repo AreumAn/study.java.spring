@@ -39,9 +39,9 @@ public class HomeController {
 		
 		User loginUser = (User)session.getAttribute("user");
 		if (loginUser != null) {
-			logger.info("******************************");
-			logger.info(categoryService.selectCategories().toString());
-			logger.info(topicService.selectTopics().toString());
+//			logger.info("******************************");
+//			logger.info(categoryService.selectCategories().toString());
+//			logger.info(topicService.selectTopics().toString());
 			model.addAttribute("login", true);
 			model.addAttribute("categorylist", categoryService.selectCategories());
 			model.addAttribute("topiclist", topicService.selectTopics());
