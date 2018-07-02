@@ -21,7 +21,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo ">
-						<a href="index.html"> <img src="/resources/images/logo.jpg"
+						<a href="/"> <img src="/resources/images/logo.jpg"
 							alt="" />
 						</a>
 					</div>

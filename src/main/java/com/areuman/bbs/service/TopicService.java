@@ -11,5 +11,6 @@ public interface TopicService {
 	List<Topic> selectTopicsByAsc();
 	List<Topic> selectTopicsByDesc();
 	List<Topic> selectTopicsByDate();
+	Topic selectOneTopic(int topicID);
 	void insertTopic(Topic topic);
 }

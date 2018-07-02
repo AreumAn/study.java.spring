@@ -19,6 +19,10 @@
   	SELECT * FROM topic order by modifyDate DESC
   </select>
   
+  <select id="selectOneTopic" resultType="com.areuman.bbs.model.Topic">
+    select * from topic where topicID = #{topicID}
+  </select>
+  
   <insert id="insertTopic">
   	insert into topic (category, title, description, writer)
 	values (#{category},#{title},#{description},#{writer});

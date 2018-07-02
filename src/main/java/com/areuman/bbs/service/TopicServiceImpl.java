@@ -39,5 +39,10 @@ public class TopicServiceImpl implements TopicService {
 		// TODO Auto-generated method stub
 		topicDAO.insertTopic(topic);
 	}
+	@Override
+	public Topic selectOneTopic(int topicID) {
+		// TODO Auto-generated method stub
+		return topicDAO.selectOneTopic(topicID);
+	}
 
 }

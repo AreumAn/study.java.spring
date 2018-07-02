@@ -26,7 +26,7 @@
 							<div class="posttext pull-left">
 								<!-- 제목 -->
 								<h2>
-									<a href="details.html">${topic.title}</a>
+									<a href="/topic/detail?topicID=${topic.topicID}">${topic.title}</a>
 								</h2>
 								<!-- 내용 앞에 100자 -->
 								<p>${topic.description}</p>
