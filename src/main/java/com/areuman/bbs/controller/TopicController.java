@@ -72,7 +72,7 @@ public class TopicController {
 		List<Category> category = categoryService.selectCategories();
 		model.addAttribute("categorylist", category);
 		model.addAttribute("topic", topicService.selectOneTopic(topicID));
-		logger.info(topicService.selectOneTopic(topicID).toString());
+		//logger.info(topicService.selectOneTopic(topicID).toString());
 		return "detail";
 	}
 	
